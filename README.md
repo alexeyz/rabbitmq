@@ -1,0 +1,4 @@
+RabbitMQ
+====
+
+RabbitMQ RightScale Blueprint
