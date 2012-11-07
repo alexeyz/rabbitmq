@@ -3,13 +3,33 @@
 
 site 'http://community.opscode.com/api/v1'
 
-# cookbook 'chef-client'
+cookbook 'system',
+   :git => 'https://github.com/flaccid/cookbooks',
+   :path => 'cookbooks/system',
+   :ref => 'master'
 
-# cookbook 'apache2', '>= 1.0.0'
+cookbook 'rightscale',
+   :git => 'https://github.com/flaccid/cookbooks',
+   :path => 'cookbooks/rightscale',
+   :ref => 'master'
 
-# cookbook 'rvm',
-#   :git => 'https://github.com/fnichol/chef-rvm'
+cookbook 'resolver',
+   :git => 'https://github.com/flaccid/cookbooks',
+   :path => 'cookbooks/resolver',
+   :ref => 'master'
 
-# cookbook 'postgresql',
-#   :git => 'https://github.com/findsyou/cookbooks',
-#   :ref => 'postgresql-improvements'
+cookbook 'ntp',
+  :git => 'https://github.com/opscode-cookbooks/ntp',
+  :ref => 'master'
+
+cookbook 'collectd',
+  :git => 'https://github.com/flaccid/chef-collectd',
+  :ref => 'master'
+
+cookbook 'collectd_plugins',
+  :git => 'https://github.com/coderanger/chef-collectd_plugins',
+  :ref => 'master'
+
+cookbook 'rabbitmq',
+  :git => 'https://github.com/alexeyz/opscode_rabbitmq',
+  :ref => 'master'
