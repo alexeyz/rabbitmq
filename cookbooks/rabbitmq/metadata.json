@@ -1,0 +1,190 @@
+{
+  "replacing": {
+  },
+  "suggestions": {
+  },
+  "version": "1.6.4",
+  "recommendations": {
+  },
+  "attributes": {
+    "rabbitmq/cluster_config": {
+      "calculated": false,
+      "default": "/etc/rabbitmq/rabbitmq_cluster.config",
+      "recipes": [
+
+      ],
+      "type": "string",
+      "description": "Path to the clustering configuration file, if cluster is yes.",
+      "required": "optional",
+      "choice": [
+
+      ],
+      "display_name": "RabbitMQ clustering configuration file"
+    },
+    "rabbitmq/logdir": {
+      "calculated": false,
+      "recipes": [
+
+      ],
+      "type": "string",
+      "description": "Path to the directory for log files.",
+      "required": "optional",
+      "choice": [
+
+      ],
+      "display_name": "RabbitMQ log directory"
+    },
+    "rabbitmq/port": {
+      "calculated": false,
+      "recipes": [
+
+      ],
+      "type": "string",
+      "description": "TCP port to bind.",
+      "required": "optional",
+      "choice": [
+
+      ],
+      "display_name": "RabbitMQ server port"
+    },
+    "rabbitmq/erlang_cookie": {
+      "calculated": false,
+      "recipes": [
+
+      ],
+      "type": "string",
+      "description": "Access cookie for clustering nodes.  There is no default.",
+      "required": "optional",
+      "choice": [
+
+      ],
+      "display_name": "RabbitMQ Erlang cookie"
+    },
+    "rabbitmq/cluster": {
+      "calculated": false,
+      "default": "no",
+      "recipes": [
+
+      ],
+      "type": "string",
+      "description": "Whether to activate clustering.",
+      "required": "optional",
+      "choice": [
+
+      ],
+      "display_name": "RabbitMQ clustering"
+    },
+    "rabbitmq/mnesiadir": {
+      "calculated": false,
+      "recipes": [
+
+      ],
+      "type": "string",
+      "description": "Path to the directory for Mnesia database files.",
+      "required": "optional",
+      "choice": [
+
+      ],
+      "display_name": "RabbitMQ Mnesia database directory"
+    },
+    "rabbitmq/config": {
+      "calculated": false,
+      "recipes": [
+
+      ],
+      "type": "string",
+      "description": "Path to the rabbitmq.config file, if any.",
+      "required": "optional",
+      "choice": [
+
+      ],
+      "display_name": "RabbitMQ config file to load"
+    },
+    "rabbitmq/address": {
+      "calculated": false,
+      "recipes": [
+
+      ],
+      "type": "string",
+      "description": "IP address to bind.",
+      "required": "optional",
+      "choice": [
+
+      ],
+      "display_name": "RabbitMQ server IP address"
+    },
+    "rabbitmq/nodename": {
+      "calculated": false,
+      "default": "node['hostname']",
+      "recipes": [
+
+      ],
+      "type": "string",
+      "description": "The Erlang node name for this server.",
+      "required": "optional",
+      "choice": [
+
+      ],
+      "display_name": "RabbitMQ Erlang node name"
+    },
+    "rabbitmq/cluster_disk_nodes": {
+      "calculated": false,
+      "default": [
+
+      ],
+      "recipes": [
+
+      ],
+      "type": "array",
+      "description": "Array of member Erlang nodenames for the disk-based storage nodes in the cluster.",
+      "required": "optional",
+      "choice": [
+
+      ],
+      "display_name": "RabbitMQ cluster disk nodes"
+    },
+    "rabbitmq": {
+      "calculated": false,
+      "recipes": [
+
+      ],
+      "type": "hash",
+      "description": "Hash of RabbitMQ attributes",
+      "required": "optional",
+      "choice": [
+
+      ],
+      "display_name": "RabbitMQ"
+    }
+  },
+  "recipes": {
+    "rabbitmq::cluster": "Set up RabbitMQ clustering.",
+    "rabbitmq": "Install and configure RabbitMQ"
+  },
+  "conflicting": {
+  },
+  "dependencies": {
+    "erlang": ">= 0.9",
+    "yum": ">= 0.5.0",
+    "apt": ">= 1.4.4"
+  },
+  "groupings": {
+  },
+  "maintainer_email": "cookbooks@opscode.com",
+  "description": "Installs and configures RabbitMQ server",
+  "providing": {
+  },
+  "platforms": {
+    "amazon": ">= 0.0.0",
+    "fedora": ">= 0.0.0",
+    "debian": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0",
+    "centos": ">= 0.0.0",
+    "scientific": ">= 0.0.0"
+  },
+  "maintainer": "Opscode, Inc.",
+  "long_description": "",
+  "name": "rabbitmq",
+  "license": "Apache 2.0"
+}

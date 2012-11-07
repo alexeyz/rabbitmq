@@ -31,5 +31,5 @@ cookbook 'collectd_plugins',
   :ref => 'master'
 
 cookbook 'rabbitmq',
-  :git => 'https://github.com/alexeyz/opscode_rabbitmq',
+  :git => 'https://github.com/opscode-cookbooks/rabbitmq.git',
   :ref => 'master'

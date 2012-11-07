@@ -1,46 +1,58 @@
 {
   "version": "0.0.1",
+  "platforms": {
+    "archlinux": ">= 0.0.0",
+    "fedora": ">= 0.0.0",
+    "debian": ">= 0.0.0",
+    "ubuntu": ">= 0.0.0",
+    "redhat": ">= 0.0.0",
+    "centos": ">= 0.0.0"
+  },
+  "name": "system",
   "recipes": {
     "system::default": "Set the system hostname and timezone.",
     "system::hostname": "Sets the system hostname.",
     "system::timezone": "Sets the system timezone."
   },
-  "conflicting": {
+  "providing": {
+  },
+  "groupings": {
+  },
+  "license": "Apache 2.0",
+  "dependencies": {
+    "cron": ">= 0.0.0"
   },
   "replacing": {
   },
   "recommendations": {
   },
-  "description": "Installs/Configures system elements such as the hostname and timezone.",
-  "name": "system",
-  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
-  "groupings": {
-  },
   "maintainer_email": "chris@xhost.com.au",
+  "long_description": "Description\n===========\n\nRequirements\n============\n\nAttributes\n==========\n\nUsage\n=====\n\n",
+  "suggestions": {
+  },
+  "maintainer": "Chris Fordham",
   "attributes": {
-    "system/short_hostname": {
+    "system/domain_name": {
+      "type": "string",
       "recipes": [
         "system::hostname",
         "system::default"
       ],
-      "default": "localhost",
-      "required": "recommended",
-      "description": "The short hostname that you would like this node to have, e.g. kryten",
+      "calculated": false,
       "choice": [
 
       ],
-      "calculated": false,
-      "display_name": "Short Hostname",
-      "type": "string"
+      "display_name": "Domain Name",
+      "required": "recommended",
+      "default": "localdomain",
+      "description": "The domain name that you would like this node to have, e.g. domain.suf. Note: Only set a valid domain name to satisfy the resolution of a FQDN; use ignore:ignore for no domain name."
     },
     "system/timezone": {
+      "type": "string",
       "recipes": [
         "system::timezone",
         "system::default"
       ],
-      "default": "UTC",
-      "required": "optional",
-      "description": "Sets the system time to the timezone of the specified input, which must be a valid zoneinfo/tz database entry.  If the input is 'unset' the timezone will use the 'localtime' that's defined in your RightScale account under Settings -> User -> Preferences tab.  You can find a list of valid examples from the timezone pulldown bar in the Preferences tab. The server will not be updated for daylight savings time.  Ex: US/Pacific, US/Eastern",
       "choice": [
         "Africa/Casablanca",
         "America/Bogota",
@@ -113,39 +125,27 @@
       ],
       "calculated": false,
       "display_name": "Timezone",
-      "type": "string"
+      "required": "optional",
+      "default": "UTC",
+      "description": "Sets the system time to the timezone of the specified input, which must be a valid zoneinfo/tz database entry.  If the input is 'unset' the timezone will use the 'localtime' that's defined in your RightScale account under Settings -> User -> Preferences tab.  You can find a list of valid examples from the timezone pulldown bar in the Preferences tab. The server will not be updated for daylight savings time.  Ex: US/Pacific, US/Eastern"
     },
-    "system/domain_name": {
+    "system/short_hostname": {
+      "type": "string",
       "recipes": [
         "system::hostname",
         "system::default"
       ],
-      "default": "localdomain",
-      "required": "recommended",
-      "description": "The domain name that you would like this node to have, e.g. domain.suf. Note: Only set a valid domain name to satisfy the resolution of a FQDN; use ignore:ignore for no domain name.",
+      "calculated": false,
       "choice": [
 
       ],
-      "calculated": false,
-      "display_name": "Domain Name",
-      "type": "string"
+      "display_name": "Short Hostname",
+      "required": "recommended",
+      "default": "localhost",
+      "description": "The short hostname that you would like this node to have, e.g. kryten"
     }
   },
-  "suggestions": {
+  "conflicting": {
   },
-  "platforms": {
-    "ubuntu": ">= 0.0.0",
-    "archlinux": ">= 0.0.0",
-    "debian": ">= 0.0.0",
-    "fedora": ">= 0.0.0",
-    "centos": ">= 0.0.0",
-    "redhat": ">= 0.0.0"
-  },
-  "providing": {
-  },
-  "dependencies": {
-    "cron": ">= 0.0.0"
-  },
-  "license": "Apache 2.0",
-  "maintainer": "Chris Fordham"
+  "description": "Installs/Configures system elements such as the hostname and timezone."
 }
